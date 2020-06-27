@@ -1,7 +1,7 @@
 import json
 import uuid
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.core import serializers
 from .models import Person
 
@@ -21,3 +21,7 @@ def read_server(request):
     name = request.GET['name']
     data = serializers.serialize('python', Person.objects.filter(name=name))
     return JsonResponse({'success': True, 'data': data})
+
+
+def index(request):
+    return HttpResponse('<h1>Hello, World!</h1>')
