@@ -22,7 +22,7 @@ admin.autodiscover()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('write/', server_views.write_server),
-    path('read/', server_views.read_server),
+    # path('write/', server_views.write_server),
+    # path('read/', server_views.read_server),
     path('', server_views.index, name="index")
 ]
